@@ -1,5 +1,6 @@
 import Markdown from "react-markdown";
 import { useParams } from "react-router";
+import { NotFoundPage } from "./NotFoundPage";
 
 import {
   caseStudySlugSchema,
@@ -15,21 +16,13 @@ export function CaseStudyPage() {
   const slugResult = caseStudySlugSchema.safeParse(params.slug);
 
   if (!slugResult.success) {
-    return (
-      <main>
-        <h1>Case study not found</h1>
-      </main>
-    );
+    return <NotFoundPage title="Case study not found" />;
   }
 
   const caseStudy = getCaseStudyBySlug(slugResult.data, locale);
 
   if (!caseStudy) {
-    return (
-      <main>
-        <h1>Case study not found</h1>
-      </main>
-    );
+    return <NotFoundPage title="Case study not found" />;
   }
 
   return (
