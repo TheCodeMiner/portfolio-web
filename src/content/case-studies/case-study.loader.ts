@@ -6,8 +6,8 @@ import {
   caseStudyMetadataSchema,
   caseStudySchema,
   type CaseStudy,
-  type SupportedLocale,
 } from "./case-study.schema";
+import type { SupportedLocale } from "../locales";
 
 const metadataModuleSchema = z.object({
   metadata: caseStudyMetadataSchema,
@@ -24,6 +24,14 @@ const markdownFiles = import.meta.glob<string>("./*/*.md", {
 });
 
 function parseMarkdown(source: string) {
+  // markdown should start with --- (opening of yaml delimiter),
+  // \r?\n (newline, optional carriage return),
+  // [\s\S]*?) first important capture group, which captures the yaml front matter,
+  // \r?\n (newline, optional carriage return),
+  // --- (closing of yaml delimiter),
+  // \r?\n? (optional newline, optional carriage return),
+  // ([\s\S]*) second important capture group, which captures the markdown body.
+  // so this will capture ideally 2 groups (ignore i0)-> [complete match, yaml front matter, markdown body]
   const match = source.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
 
   if (!match) {
@@ -95,4 +103,10 @@ export function getCaseStudyBySlug(
   locale: SupportedLocale = "en",
 ): CaseStudy | undefined {
   return getCaseStudies(locale).find((caseStudy) => caseStudy.slug === slug);
+}
+
+export function getFeaturedCaseStudies(
+  locale: SupportedLocale = "en",
+): CaseStudy[] {
+  return getCaseStudies(locale).filter((caseStudy) => caseStudy.featured);
 }

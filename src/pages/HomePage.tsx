@@ -1,11 +1,22 @@
-import { Link } from "react-router";
+import { AboutSection } from "../components/home/AboutSection";
+import { ContactSection } from "../components/home/ContactSection";
+import { EngineeringFocusSection } from "../components/home/EngineeringFocusSection";
+import { HeroSection } from "../components/home/HeroSection";
+import { SelectedWork } from "../components/projects/SelectedWork";
+import { homeContent } from "../content/home/en";
 
 export function HomePage() {
   return (
     <main>
-      <h1>Portfolio</h1>
+      <HeroSection content={homeContent.hero} />
 
-      <Link to="/projects/example">Example case study</Link>
+      <SelectedWork />
+
+      <EngineeringFocusSection content={homeContent.engineeringFocus} />
+
+      <AboutSection content={homeContent.about} />
+
+      <ContactSection content={homeContent.contact} />
     </main>
   );
 }

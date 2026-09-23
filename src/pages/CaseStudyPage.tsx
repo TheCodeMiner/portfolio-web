@@ -2,13 +2,9 @@ import Markdown from "react-markdown";
 import { useParams } from "react-router";
 import { NotFoundPage } from "./NotFoundPage";
 
-import {
-  caseStudySlugSchema,
-  type SupportedLocale,
-} from "../content/case-studies/case-study.schema";
+import { caseStudySlugSchema } from "../content/case-studies/case-study.schema";
+import { defaultLocale } from "../content/locales";
 import { getCaseStudyBySlug } from "../content/case-studies/case-study.loader";
-
-const locale: SupportedLocale = "en";
 
 export function CaseStudyPage() {
   const params = useParams();
@@ -19,7 +15,7 @@ export function CaseStudyPage() {
     return <NotFoundPage title="Case study not found" />;
   }
 
-  const caseStudy = getCaseStudyBySlug(slugResult.data, locale);
+  const caseStudy = getCaseStudyBySlug(slugResult.data, defaultLocale);
 
   if (!caseStudy) {
     return <NotFoundPage title="Case study not found" />;
