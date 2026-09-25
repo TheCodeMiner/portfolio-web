@@ -1,21 +1,22 @@
-@import "@radix-ui/colors/sage.css";
-@import "@radix-ui/colors/green.css";
+@import "@radix-ui/colors/sage-dark.css";
+@import "@radix-ui/colors/green-dark.css";
 
 :root {
-  --color-page: var(--sage-1);
-  --color-surface: var(--sage-2);
-  --color-text: var(--sage-12);
-  --color-text-muted: var(--sage-11);
-  --color-heading: var(--green-12);
-  --color-border: var(--sage-6);
-  --color-border-interactive: var(--green-8);
+  --color-page: #111915;
+  --color-surface: #18221d;
+  --color-text: #f0e8dc;
+  --color-text-muted: #a7aaa2;
+  --color-heading: var(--color-text);
+  --color-border: var(--sage-5);
+  --color-border-interactive: var(--green-7);
   --color-accent-soft: var(--green-3);
   --color-accent-soft-hover: var(--green-4);
-  --color-accent: var(--green-9);
-  --color-accent-hover: var(--green-10);
-  --color-accent-text: var(--green-11);
-  --color-accent-strong: var(--green-12);
-  --color-focus: var(--green-8);
+  --color-accent: #a7eda0;
+  --color-accent-hover: var(--green-12);
+  --color-accent-text: #9cb88e;
+  --color-accent-strong: #a7eda0;
+  --color-focus: #a7eda0;
+  --color-ambient: rgb(156 184 142 / 5.5%);
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;

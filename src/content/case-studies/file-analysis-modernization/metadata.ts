@@ -19,6 +19,7 @@ export const metadata = {
     "PDF.js",
     "WebAssembly",
     "libjpeg-turbo",
+    "libspng",
     "Vitest",
     "Playwright",
     "Vite",

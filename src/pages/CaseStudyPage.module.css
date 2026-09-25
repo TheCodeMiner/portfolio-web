@@ -4,7 +4,7 @@
   background:
     radial-gradient(
       circle at top left,
-      var(--color-accent-soft),
+      var(--color-ambient),
       transparent 34rem
     ),
     var(--color-page);
