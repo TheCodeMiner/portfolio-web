@@ -7,7 +7,7 @@ import {
   caseStudySchema,
   type CaseStudy,
 } from "./case-study.schema";
-import type { SupportedLocale } from "../locales";
+import { defaultLocale, type SupportedLocale } from "../../i18n/locales";
 
 const metadataModuleSchema = z.object({
   metadata: caseStudyMetadataSchema,
@@ -60,7 +60,9 @@ function parseMarkdown(source: string) {
   };
 }
 
-export function getCaseStudies(locale: SupportedLocale = "en"): CaseStudy[] {
+export function getCaseStudies(
+  locale: SupportedLocale = defaultLocale,
+): CaseStudy[] {
   return Object.entries(metadataModules).map(([metadataPath, module]) => {
     const directoryMatch = metadataPath.match(/^\.\/([^/]+)\/metadata\.ts$/);
 
@@ -100,13 +102,13 @@ export function getCaseStudies(locale: SupportedLocale = "en"): CaseStudy[] {
 
 export function getCaseStudyBySlug(
   slug: string,
-  locale: SupportedLocale = "en",
+  locale: SupportedLocale = defaultLocale,
 ): CaseStudy | undefined {
   return getCaseStudies(locale).find((caseStudy) => caseStudy.slug === slug);
 }
 
 export function getFeaturedCaseStudies(
-  locale: SupportedLocale = "en",
+  locale: SupportedLocale = defaultLocale,
 ): CaseStudy[] {
   return getCaseStudies(locale).filter((caseStudy) => caseStudy.featured);
 }

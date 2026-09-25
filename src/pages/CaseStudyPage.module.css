@@ -1,0 +1,108 @@
+.page {
+  padding: clamp(var(--space-7), 8vw, 6rem) var(--page-gutter);
+  border-top: 1px solid var(--color-border);
+  background:
+    radial-gradient(
+      circle at top left,
+      var(--color-accent-soft),
+      transparent 34rem
+    ),
+    var(--color-page);
+}
+
+.article {
+  width: min(100%, var(--page-width));
+  margin-inline: auto;
+}
+
+.header {
+  max-width: var(--header-width);
+  margin-bottom: clamp(var(--space-8), 9vw, 6rem);
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-4);
+  color: var(--color-accent-text);
+  font-size: var(--font-size-small);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.header h1 {
+  max-width: 18ch;
+  margin: 0;
+  color: var(--color-heading);
+  font-size: var(--font-size-title);
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+.summary {
+  max-width: 46rem;
+  margin: var(--space-5) 0 var(--space-7);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lead);
+  line-height: 1.55;
+}
+
+.content {
+  max-width: var(--reading-width);
+}
+
+.content h2 {
+  margin: var(--space-8) 0 var(--space-4);
+  color: var(--color-heading);
+  font-size: clamp(1.5rem, 1.3rem + 0.75vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.content h2:first-child {
+  margin-top: 0;
+}
+
+.content p {
+  margin: 0 0 var(--space-5);
+}
+
+.content a {
+  font-weight: 600;
+}
+
+.content code {
+  padding: 0.1em 0.3em;
+  border-radius: var(--radius-small);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.9em;
+  overflow-wrap: anywhere;
+}
+
+.content pre {
+  max-width: 100%;
+  padding: var(--space-5);
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+  background: var(--color-surface);
+}
+
+.content pre code {
+  padding: 0;
+  background: transparent;
+  overflow-wrap: normal;
+}
+
+@media (min-width: 48rem) {
+  .header {
+    margin-left: clamp(0rem, 4vw, 3rem);
+  }
+
+  .content {
+    margin-left: clamp(0rem, 8vw, 6rem);
+  }
+}
