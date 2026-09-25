@@ -14,8 +14,11 @@
     "format:check": "prettier . --check"
   },
   "dependencies": {
+    "@radix-ui/colors": "^3.0.0",
+    "i18next": "^26.4.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "react-i18next": "^17.0.15",
     "react-markdown": "^10.1.0",
     "react-router": "^8.4.0",
     "yaml": "^2.9.1",
