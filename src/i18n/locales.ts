@@ -10,11 +10,8 @@ export const supportedLocales: readonly SupportedLocale[] =
 export const defaultLocale: SupportedLocale = "en";
 
 /**
- * Resolves the supported locale from the given locale string.
- * If the locale is not supported, it returns the default locale.
- *
- * @param locale - The locale string to resolve.
- * @returns The resolved supported locale.
+ * Accepts only an exact registered locale and falls back to `defaultLocale`
+ * for missing, regional, or otherwise unsupported language values.
  */
 export function resolveSupportedLocale(
   locale: string | undefined,

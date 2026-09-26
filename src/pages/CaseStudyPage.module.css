@@ -24,7 +24,7 @@
   margin: 0 0 var(--space-4);
   color: var(--color-accent-text);
   font-size: var(--font-size-small);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -37,6 +37,7 @@
   line-height: var(--line-height-tight);
   letter-spacing: -0.04em;
   text-wrap: balance;
+  font-weight: 550;
 }
 
 .summary {

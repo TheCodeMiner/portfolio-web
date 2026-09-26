@@ -6,7 +6,7 @@ import { NotFoundPage } from "./NotFoundPage";
 
 import { caseStudySlugSchema } from "../content/case-studies/case-study.schema";
 import { getCaseStudyBySlug } from "../content/case-studies/case-study.loader";
-import { CaseStudyMeta } from "../components/projects/CaseStudyMeta";
+import { CaseStudyMeta } from "../components/case-studies/CaseStudyMeta";
 
 import styles from "./CaseStudyPage.module.css";
 

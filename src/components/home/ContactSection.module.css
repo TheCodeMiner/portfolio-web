@@ -1,0 +1,117 @@
+.section {
+  padding: var(--space-3) var(--page-gutter) clamp(2rem, 3vw, 2.5rem);
+  background: var(--color-page);
+  scroll-margin-top: var(--space-4);
+}
+
+.panel {
+  display: grid;
+  width: min(100%, var(--page-width));
+  margin-inline: auto;
+  padding: var(--space-5);
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--radius-large);
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      var(--color-ambient-strong),
+      transparent 24rem
+    ),
+    linear-gradient(
+      180deg,
+      var(--color-glass-highlight),
+      var(--color-glass-surface-strong) 34%
+    );
+  box-shadow:
+    inset 0 1px var(--color-glass-highlight),
+    var(--shadow-card);
+  gap: var(--space-5);
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+  .panel {
+    background:
+      radial-gradient(
+        circle at 85% 10%,
+        var(--color-ambient-strong),
+        transparent 24rem
+      ),
+      linear-gradient(
+        180deg,
+        var(--color-glass-highlight),
+        var(--color-glass-surface) 42%
+      );
+    backdrop-filter: blur(0.75rem) saturate(110%);
+  }
+}
+
+.panel h2 {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: clamp(1.5rem, 1.3rem + 0.6vw, 1.875rem);
+  font-weight: 550;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.panel p {
+  max-width: 40rem;
+  margin: var(--space-2) 0 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lead);
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  justify-self: start;
+  min-height: 3rem;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-pill);
+  background: linear-gradient(
+    110deg,
+    var(--color-cta-start),
+    var(--color-cta-end)
+  );
+  color: var(--color-cta-text);
+  box-shadow: var(--shadow-cta);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  gap: var(--space-3);
+  transition:
+    box-shadow var(--transition-fast),
+    filter var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.action:hover {
+  color: var(--color-cta-text);
+  box-shadow: var(--shadow-cta-hover);
+  filter: brightness(1.025) saturate(1.02);
+}
+
+.action:active {
+  box-shadow: var(--shadow-cta-active);
+  filter: brightness(0.97);
+  transform: translateY(1px);
+}
+
+@media (min-width: 48rem) {
+  .panel {
+    grid-template-columns: auto minmax(16rem, 1fr) auto;
+    align-items: center;
+    column-gap: clamp(var(--space-6), 4vw, var(--space-8));
+    padding: 1.25rem var(--space-6);
+  }
+
+  .panel > div {
+    display: contents;
+  }
+
+  .panel p {
+    margin: 0;
+  }
+}

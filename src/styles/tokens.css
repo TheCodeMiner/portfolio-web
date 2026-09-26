@@ -1,22 +1,40 @@
-@import "@radix-ui/colors/sage-dark.css";
-@import "@radix-ui/colors/green-dark.css";
-
 :root {
   --color-page: #111915;
   --color-surface: #18221d;
   --color-text: #f0e8dc;
   --color-text-muted: #a7aaa2;
   --color-heading: var(--color-text);
-  --color-border: var(--sage-5);
-  --color-border-interactive: var(--green-7);
-  --color-accent-soft: var(--green-3);
-  --color-accent-soft-hover: var(--green-4);
+  --color-border: #2e3130;
+  --color-border-interactive: #28684a;
+  --color-accent-soft: #132d21;
+  --color-accent-soft-hover: #113b29;
   --color-accent: #a7eda0;
-  --color-accent-hover: var(--green-12);
+  --color-accent-hover: #b1f1cb;
   --color-accent-text: #9cb88e;
   --color-accent-strong: #a7eda0;
   --color-focus: #a7eda0;
   --color-ambient: rgb(156 184 142 / 5.5%);
+  --color-ambient-strong: rgb(167 237 160 / 10%);
+  --color-warm-accent: #caa56a;
+  --color-warm-ambient: rgb(202 165 106 / 10%);
+  --color-glass-surface: rgb(24 34 29 / 78%);
+  --color-glass-surface-strong: rgb(24 34 29 / 92%);
+  --color-glass-border: rgb(167 237 160 / 13%);
+  --color-glass-highlight: rgb(240 232 220 / 7%);
+  --color-grid-line: rgb(167 237 160 / 7%);
+  --color-cta-start: #c1dfad;
+  --color-cta-end: #87d995;
+  --color-cta-text: #0e2118;
+  --color-cta-highlight: rgb(255 255 255 / 30%);
+  --color-cta-highlight-hover: rgb(255 255 255 / 38%);
+  --color-cta-edge: rgb(14 33 24 / 18%);
+  --color-cta-shadow: rgb(3 15 9 / 28%);
+  --color-tag-surface: rgb(54 65 55 / 52%);
+  --color-tag-border: rgb(167 184 142 / 16%);
+  --color-tag-text: #b9b9ac;
+  --color-area-tag-surface: rgb(39 65 48 / 62%);
+  --color-area-tag-border: rgb(167 237 160 / 17%);
+  --color-area-tag-text: #b3c8a9;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -29,15 +47,31 @@
 
   --radius-small: 0.375rem;
   --radius-medium: 0.75rem;
+  --radius-large: 1.25rem;
+  --radius-pill: 999px;
+  --font-family-sans: "Manrope Variable", "Segoe UI", sans-serif;
   --font-size-small: 0.875rem;
   --font-size-body: 1rem;
   --font-size-lead: clamp(1.125rem, 1rem + 0.45vw, 1.375rem);
   --font-size-title: clamp(2.25rem, 1.6rem + 3vw, 4.5rem);
-  --line-height-body: 1.7;
+  --line-height-body: 1.62;
   --line-height-tight: 1.08;
-  --page-width: 72rem;
+  --page-width: 84rem;
   --reading-width: 48rem;
   --header-width: 52rem;
   --page-gutter: clamp(1rem, 4vw, 3rem);
   --transition-fast: 150ms ease;
+  --glass-blur: 1rem;
+  --shadow-card: 0 1.25rem 3.5rem rgb(0 0 0 / 16%);
+  --shadow-cta:
+    inset 0 1px 0 var(--color-cta-highlight),
+    inset 0 -1px 0 var(--color-cta-edge), 0 2px 0 var(--color-cta-shadow),
+    0 0.4rem 0.9rem rgb(0 0 0 / 13%);
+  --shadow-cta-hover:
+    inset 0 1px 0 var(--color-cta-highlight-hover),
+    inset 0 -1px 0 var(--color-cta-edge), 0 2px 0 var(--color-cta-shadow),
+    0 0.45rem 1rem rgb(0 0 0 / 15%);
+  --shadow-cta-active:
+    inset 0 2px 0.25rem rgb(14 33 24 / 20%),
+    inset 0 1px 0 rgb(255 255 255 / 14%), 0 1px 0 var(--color-cta-shadow);
 }

@@ -1,8 +1,7 @@
-import type { HomeContent } from "./home-content";
+import type { HomeContent } from "./home.types";
 
 export const homeContent = {
   hero: {
-    name: "Samer",
     role: "Software Engineer",
     introduction:
       "I build production software with a focus on backend systems, application architecture, reusable tooling, and an increasing focus on Linux and infrastructure.",

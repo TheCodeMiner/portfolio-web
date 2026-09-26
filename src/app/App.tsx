@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 
-import { AppLayout } from "../components/layout/AppLayout";
+import { AppLayout } from "../layouts/AppLayout";
 import { CaseStudyPage } from "../pages/CaseStudyPage";
 import { HomePage } from "../pages/HomePage";
 import { NotFoundPage } from "../pages/NotFoundPage";
